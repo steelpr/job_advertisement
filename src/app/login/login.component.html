@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Login</h1>
+<div mat-dialog-content>
+  <form [formGroup]="loginForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input formControlName="username" matInput placeholder="Name" />
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" matInput placeholder="Password" />
+      <input matInput>
+    </mat-form-field>
+  </form>
+</div>
+
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="onLogin()">Login</button>
+</div>

@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add Job</h1>
+<div mat-dialog-content>
+  <form [formGroup]="adForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput placeholder="Title" />
+      <input matInput>
+    </mat-form-field><br />
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type" matInput placeholder="Type job">
+        <mat-option *ngFor="let type of types" [value]="type.value">
+          {{type.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="category" matInput placeholder="Job category">
+        <mat-option *ngFor="let category of categories" [value]="category.value">
+          {{category.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" placeholder="Description" matInput></textarea>
+    </mat-form-field>
+
+  </form>
+</div>
+
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addJob()">{{actionBtn}}</button>
+</div>
